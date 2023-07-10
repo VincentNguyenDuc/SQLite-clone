@@ -16,11 +16,12 @@ endif
 
 #################################### DIR ###############################################
 
-DB_DIR=./sqlite-db
+MAIN_DIR=./sqlite-db
+SRC_DIR=./sqlite-db/src
 
 #################################### MAIN ##############################################
 main:
-		gcc -o main.${TARGET_EXTENSION} ${DB_DIR}/main.c
+		gcc -o main.${TARGET_EXTENSION} ${MAIN_DIR}/main.c ${SRC_DIR}/input.c
 		./main.${TARGET_EXTENSION}
 
 ##################################### CLEAN ############################################
