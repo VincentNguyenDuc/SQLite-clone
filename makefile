@@ -21,7 +21,7 @@ SRC_DIR=./sqlite-db/src
 
 #################################### MAIN ##############################################
 main:
-		gcc -o main.${TARGET_EXTENSION} ${MAIN_DIR}/main.c ${SRC_DIR}/input.c
+		gcc -o main.${TARGET_EXTENSION} ${MAIN_DIR}/main.c ${SRC_DIR}/input.c ${SRC_DIR}/meta_commands.c ${SRC_DIR}/statements.c
 		./main.${TARGET_EXTENSION}
 
 ##################################### CLEAN ############################################

@@ -35,9 +35,11 @@ void read_input(InputBuffer *input_buffer)
 }
 
 // Unrecognized command
-void print_unrecognized_command(InputBuffer* input_buffer) {
+void print_unrecognized_command(InputBuffer *input_buffer)
+{
     printf("Unrecognized command '%s'.\n", input_buffer->buffer);
 }
+
 
 // Exit session
 void close_input_buffer(InputBuffer *input_buffer)
