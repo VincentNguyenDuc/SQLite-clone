@@ -12,12 +12,6 @@ InputBuffer *new_input_buffer()
     return input_buffer;
 }
 
-// A promt to the user
-void print_promt()
-{
-    printf("$ ");
-}
-
 // Read input from user
 void read_input(InputBuffer *input_buffer)
 {
@@ -33,13 +27,6 @@ void read_input(InputBuffer *input_buffer)
     input_buffer->input_length = bytes_read - 1;
     input_buffer->buffer[bytes_read - 1] = 0;
 }
-
-// Unrecognized command
-void print_unrecognized_command(InputBuffer *input_buffer)
-{
-    printf("Unrecognized command '%s'.\n", input_buffer->buffer);
-}
-
 
 // Exit session
 void close_input_buffer(InputBuffer *input_buffer)

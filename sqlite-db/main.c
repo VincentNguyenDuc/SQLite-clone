@@ -1,14 +1,14 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <stdbool.h>
-#include <string.h>
 #include "./inc/input.h"
-#include "./inc/meta_commands.h"
-#include "./inc/statements.h"
+#include "./inc/meta_command.h"
+#include "./inc/statement.h"
+#include "./inc/promt.h"
+#include "./inc/table.h"
 
-// Read-Exucute-Print-Loop (REPL)
+// Read-Exucute-Print-Loop (REPL). This is basically the whole program
 int main()
 {
+    Table *table = new_table();
     InputBuffer *input_buffer = new_input_buffer();
     while (true)
     {
@@ -25,7 +25,7 @@ int main()
             case META_COMMAND_SUCCESS:
                 continue;
             case META_COMMAND_UNRECOGNIZED_COMMAND:
-                print_unrecognized_command(input_buffer);
+                print_unrecognized(input_buffer);
                 continue;
             }
         }
@@ -37,11 +37,21 @@ int main()
         case PREPARE_SUCCESS:
             break;
         case PREPARE_UNRECOGNIZED_STATEMENT:
-            print_unrecognized_command(input_buffer);
+            print_unrecognized(input_buffer);
+            continue;
+        case PREPARE_SYNTAX_ERROR:
+            print_syntax_error(input_buffer);
             continue;
         }
 
-        execute_statement(&statement);
-        printf("Executed.\n");
+        switch (execute_statement(&statement, table))
+        {
+        case EXECUTE_SUCCESS:
+            print_executed();
+            break;
+        case EXECUTE_TABLE_FULL:
+            print_table_full();
+            break;
+        }
     }
 }
