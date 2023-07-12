@@ -42,6 +42,12 @@ int main()
         case PREPARE_SYNTAX_ERROR:
             print_syntax_error(input_buffer);
             continue;
+        case PREPARE_STRING_TOO_LONG:
+            print_too_long();
+            continue;
+        case PREPARE_NEGATIVE_ID:
+            print_key_error();
+            continue;
         }
 
         switch (execute_statement(&statement, table))

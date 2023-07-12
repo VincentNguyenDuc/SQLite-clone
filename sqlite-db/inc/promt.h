@@ -13,4 +13,8 @@ void print_executed();
 
 void print_table_full();
 
+void print_too_long();
+
+void print_key_error();
+
 #endif

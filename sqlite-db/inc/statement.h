@@ -14,7 +14,9 @@ typedef enum PrepareResult
 {
     PREPARE_SUCCESS,
     PREPARE_UNRECOGNIZED_STATEMENT,
-    PREPARE_SYNTAX_ERROR
+    PREPARE_SYNTAX_ERROR,
+    PREPARE_STRING_TOO_LONG,
+    PREPARE_NEGATIVE_ID
 } PrepareResult;
 
 typedef enum ExecuteResult 

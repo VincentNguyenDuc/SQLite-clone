@@ -41,7 +41,7 @@ void free_table(Table *table)
 // Print a row
 void print_row(Row *row)
 {
-    printf("(%d, %s, %s)\n", row->id, row->username, row->email);
+    printf("> (%d, %s, %s)\n", row->id, row->username, row->email);
 }
 
 // Serialize a Row struct into raw bytes
