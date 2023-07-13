@@ -3,15 +3,31 @@
 #define TABLE_H
 
 #include <stdint.h>
+#include <stdbool.h>
 #include "pager.h"
 
-// TABLE
+// TABLE: Table of the database
 typedef struct Table
 {
     Pager *pager;
     uint32_t num_rows;
 } Table;
 
-void *table_slot(Table *table, uint32_t row_num);
+
+// CURSOR: Representing a location in the table
+typedef struct Cursor
+{
+    Table *table;
+    uint32_t row_num;
+    bool end_of_table; // Indicates a position one past the last element
+} Cursor;
+
+Cursor *table_start(Table *table);
+
+Cursor *table_end(Table *table);
+
+void *cursor_value(Cursor *cursor);
+
+void cursor_advance(Cursor *cursor);
 
 #endif

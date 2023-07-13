@@ -10,12 +10,7 @@
 // Open a pager
 Pager *pager_open(const char *filename)
 {
-    int fd = open(filename,
-                  O_RDWR |     // Read/Write mode
-                      O_CREAT, // Create file if it does not exist
-                  S_IWUSR |    // User write permission
-                      S_IRUSR  // User read permission
-    );
+    int fd = open(filename, O_RDWR | O_CREAT, S_IWUSR | S_IRUSR);
     if (fd == -1)
     {
         printf("Unable to open file\n");
