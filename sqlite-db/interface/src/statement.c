@@ -59,7 +59,7 @@ PrepareResult prepare_statement(InputBuffer *input_buffer, Statement *statement)
 // Insert a statement into table
 ExecuteResult execute_insert(Statement *statement, Table *table)
 {
-    if (table->num_rows >= 1400)
+    if (table->num_rows >= TABLE_MAX_ROWS)
     {
         return EXECUTE_TABLE_FULL;
     }
