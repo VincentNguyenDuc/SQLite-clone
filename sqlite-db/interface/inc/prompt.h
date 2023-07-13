@@ -17,4 +17,6 @@ void print_too_long();
 
 void print_key_error();
 
+void print_filename_error();
+
 #endif

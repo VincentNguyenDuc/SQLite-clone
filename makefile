@@ -24,7 +24,7 @@ BACKEND_SRC_DIR=./sqlite-db/backend/src
 
 main:
 		gcc -o main.${TARGET_EXTENSION} ${MAIN_DIR}/main.c ${INTERFACE_SRC_DIR}/*.c  ${BACKEND_SRC_DIR}/*.c
-		./main.${TARGET_EXTENSION}
+		./main.${TARGET_EXTENSION} mydb.db
 
 ##################################### CLEAN ############################################
 clean:	

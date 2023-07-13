@@ -41,3 +41,9 @@ void print_too_long() {
 void print_key_error() {
     printf("!!! Key Error.\n");
 }
+
+// Filename error
+void print_filename_error() {
+    printf("!!! Must supply a database filename.\n");
+}
+

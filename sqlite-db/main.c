@@ -1,6 +1,5 @@
 #include <stdbool.h>
-
-
+#include <stdlib.h>
 #include "./interface/inc/input.h"
 #include "./interface/inc/meta_command.h"
 #include "./interface/inc/prompt.h"
@@ -9,9 +8,16 @@
 
 
 // Read-Exucute-Print-Loop (REPL). This is basically the whole program
-int main()
+int main(int argc, char *argv[])
 {
-    Table *table = new_table();
+    if (argc < 2) {
+        print_filename_error();
+        exit(EXIT_FAILURE);
+    }
+
+    char *filename = argv[1];
+    Table* table = db_open(filename);
+
     InputBuffer *input_buffer = new_input_buffer();
     while (true)
     {
@@ -23,7 +29,7 @@ int main()
         // HANDLE META COMMMANDS
         if (input_buffer->buffer[0] == '.')
         {
-            switch (do_meta_command(input_buffer))
+            switch (do_meta_command(input_buffer, table))
             {
             case META_COMMAND_SUCCESS:
                 continue;
