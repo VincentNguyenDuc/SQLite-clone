@@ -17,13 +17,13 @@ endif
 #################################### DIR ###############################################
 
 MAIN_DIR=./sqlite-db
-COMMANDS_SRC_DIR=./sqlite-db/commands/src
+INTERFACE_SRC_DIR=./sqlite-db/interface/src
 BACKEND_SRC_DIR=./sqlite-db/backend/src
 
 #################################### MAIN ##############################################
 
 main:
-		gcc -o main.${TARGET_EXTENSION} ${MAIN_DIR}/main.c ${COMMANDS_SRC_DIR}/*.c  ${BACKEND_SRC_DIR}/*.c
+		gcc -o main.${TARGET_EXTENSION} ${MAIN_DIR}/main.c ${INTERFACE_SRC_DIR}/*.c  ${BACKEND_SRC_DIR}/*.c
 		./main.${TARGET_EXTENSION}
 
 ##################################### CLEAN ############################################

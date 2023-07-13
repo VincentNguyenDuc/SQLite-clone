@@ -1,10 +1,10 @@
 #include <stdbool.h>
 
 
-#include "./commands/inc/input.h"
-#include "./commands/inc/meta_command.h"
-#include "./commands/inc/prompt.h"
-#include "./commands/inc/statement.h"
+#include "./interface/inc/input.h"
+#include "./interface/inc/meta_command.h"
+#include "./interface/inc/prompt.h"
+#include "./interface/inc/statement.h"
 #include "./backend/inc/table.h"
 
 
