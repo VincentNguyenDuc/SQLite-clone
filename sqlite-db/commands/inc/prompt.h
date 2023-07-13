@@ -1,5 +1,5 @@
-#ifndef PROMT_H
-#define PROMT_H
+#ifndef PROMPT_H
+#define PROMPT_H
 
 #include "input.h"
 

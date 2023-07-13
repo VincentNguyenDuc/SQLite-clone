@@ -1,9 +1,12 @@
 #include <stdbool.h>
-#include "./inc/input.h"
-#include "./inc/meta_command.h"
-#include "./inc/statement.h"
-#include "./inc/promt.h"
-#include "./inc/table.h"
+
+
+#include "./commands/inc/input.h"
+#include "./commands/inc/meta_command.h"
+#include "./commands/inc/prompt.h"
+#include "./commands/inc/statement.h"
+#include "./backend/inc/table.h"
+
 
 // Read-Exucute-Print-Loop (REPL). This is basically the whole program
 int main()

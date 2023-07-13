@@ -2,7 +2,7 @@
 #define STATEMENT_H
 
 #include "meta_command.h"
-#include "table.h"
+#include "../../backend/inc/table.h"
 
 typedef enum StatementType
 {

@@ -1,5 +1,5 @@
 #include "../inc/statement.h"
-#include "../inc/table.h"
+#include "../../backend/inc/table.h"
 #include "../inc/input.h"
 #include <stdlib.h>
 #include <string.h>
@@ -9,10 +9,10 @@ PrepareResult prepare_insert(InputBuffer *input_buffer, Statement *statement)
 {
     statement->type = STATEMENT_INSERT;
 
-    char* keyword = strtok(input_buffer->buffer, " ");
-    char* id_string = strtok(NULL, " ");
-    char* username = strtok(NULL, " ");
-    char* email = strtok(NULL, " ");
+    const char* keyword = strtok(input_buffer->buffer, " ");
+    const char* id_string = strtok(NULL, " ");
+    const char* username = strtok(NULL, " ");
+    const char* email = strtok(NULL, " ");
     if (id_string == NULL || username == NULL || email == NULL)
     {
         return PREPARE_SYNTAX_ERROR;

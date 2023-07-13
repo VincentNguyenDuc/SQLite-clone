@@ -4,17 +4,11 @@
 
 #include <stdint.h>
 
+#define TABLE_MAX_PAGES 100
 #define COLUMN_USERNAME_SIZE 32
 #define COLUMN_EMAIL_SIZE 255
-#define TABLE_MAX_PAGES 100
 
-typedef struct Row
-{
-    uint32_t id;
-    char username[COLUMN_USERNAME_SIZE + 1];
-    char email[COLUMN_EMAIL_SIZE + 1];
-} Row;
-
+// TABLE
 typedef struct Table
 {
     uint32_t num_rows;
@@ -24,6 +18,14 @@ typedef struct Table
 Table *new_table();
 
 void free_table(Table *table);
+
+// ROWS
+typedef struct Row
+{
+    uint32_t id;
+    char username[COLUMN_USERNAME_SIZE + 1];
+    char email[COLUMN_EMAIL_SIZE + 1];
+} Row;
 
 void print_row(Row *row);
 

@@ -1,5 +1,5 @@
 #include "../inc/input.h"
-#include "../inc/promt.h"
+#include "../inc/prompt.h"
 #include <stdio.h>
 
 
