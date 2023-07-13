@@ -5,6 +5,7 @@
 #include "./interface/inc/prompt.h"
 #include "./interface/inc/statement.h"
 #include "./backend/inc/table.h"
+#include "./backend/inc/sqlite.h"
 
 
 // Read-Exucute-Print-Loop (REPL). This is basically the whole program
@@ -15,7 +16,7 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    char *filename = argv[1];
+    const char *filename = argv[1];
     Table* table = db_open(filename);
 
     InputBuffer *input_buffer = new_input_buffer();

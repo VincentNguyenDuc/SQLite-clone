@@ -1,6 +1,7 @@
 #include "../inc/meta_command.h"
 #include "../inc/input.h"
 #include "../../backend/inc/table.h"
+#include "../../backend/inc/sqlite.h"
 #include <string.h>
 #include <stdlib.h>
 
