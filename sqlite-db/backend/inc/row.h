@@ -12,7 +12,6 @@ extern const uint32_t PAGE_SIZE;
 extern const uint32_t ROWS_PER_PAGE;
 extern const uint32_t TABLE_MAX_ROWS;
 
-
 // ROWS
 typedef struct Row
 {

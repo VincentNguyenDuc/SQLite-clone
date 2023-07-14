@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../inc/input.h"
+#include "../inc/prompt.h"
 
 // Struct wrapper to work with user input
 InputBuffer *new_input_buffer()
@@ -20,7 +21,7 @@ void read_input(InputBuffer *input_buffer)
     // Error handler
     if (bytes_read <= 0)
     {
-        printf("Error reading input\n");
+        print_reading_input_error();
         exit(EXIT_FAILURE);
     }
 

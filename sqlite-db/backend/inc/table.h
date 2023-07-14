@@ -10,7 +10,7 @@
 typedef struct Table
 {
     Pager *pager;
-    uint32_t num_rows;
+    uint32_t root_page_num;
 } Table;
 
 
@@ -18,7 +18,8 @@ typedef struct Table
 typedef struct Cursor
 {
     Table *table;
-    uint32_t row_num;
+    uint32_t page_num;
+    uint32_t cell_num;
     bool end_of_table; // Indicates a position one past the last element
 } Cursor;
 

@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
             case META_COMMAND_SUCCESS:
                 continue;
             case META_COMMAND_UNRECOGNIZED_COMMAND:
-                print_unrecognized(input_buffer);
+                print_unrecognized_error(input_buffer);
                 continue;
             }
         }
@@ -47,13 +47,13 @@ int main(int argc, char *argv[])
         case PREPARE_SUCCESS:
             break;
         case PREPARE_UNRECOGNIZED_STATEMENT:
-            print_unrecognized(input_buffer);
+            print_unrecognized_error(input_buffer);
             continue;
         case PREPARE_SYNTAX_ERROR:
             print_syntax_error(input_buffer);
             continue;
         case PREPARE_STRING_TOO_LONG:
-            print_too_long();
+            print_value_error();
             continue;
         case PREPARE_NEGATIVE_ID:
             print_key_error();
@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
             print_executed();
             break;
         case EXECUTE_TABLE_FULL:
-            print_table_full();
+            print_table_full_error();
             break;
         }
     }
