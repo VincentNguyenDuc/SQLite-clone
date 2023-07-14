@@ -60,7 +60,7 @@ PrepareResult prepare_statement(InputBuffer *input_buffer, Statement *statement)
 ExecuteResult execute_insert(Statement *statement, Table *table)
 {
     void *node = get_page(table->pager, table->root_page_num);
-    if ((*leaf_node_num_cells(node) >= LEAF_NODE_MAX_CELLS))
+    if (*leaf_node_num_cells(node) >= LEAF_NODE_MAX_CELLS)
     {
         return EXECUTE_TABLE_FULL;
     }
