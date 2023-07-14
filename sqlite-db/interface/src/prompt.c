@@ -41,6 +41,11 @@ void print_key_error()
     printf("!!! KeyError: Key Error.\n");
 }
 
+void print_duplicate_key_error() 
+{
+    printf("!!! KeyError: Duplicate Key.\n");
+}
+
 // File error
 void print_filename_error()
 {

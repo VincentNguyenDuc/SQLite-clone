@@ -22,6 +22,7 @@ typedef enum PrepareResult
 typedef enum ExecuteResult 
 {
     EXECUTE_TABLE_FULL,
+    EXECUTE_DUPLICATE_KEY,
     EXECUTE_SUCCESS
 } ExecuteResult;
 

@@ -65,6 +65,9 @@ int main(int argc, char *argv[])
         case EXECUTE_SUCCESS:
             print_executed();
             break;
+        case EXECUTE_DUPLICATE_KEY:
+            print_duplicate_key_error();
+            break;
         case EXECUTE_TABLE_FULL:
             print_table_full_error();
             break;

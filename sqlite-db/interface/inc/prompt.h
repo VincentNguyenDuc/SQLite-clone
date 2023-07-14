@@ -37,4 +37,6 @@ void print_seeking_error();
 
 void print_writing_error();
 
+void print_duplicate_key_error();
+
 #endif
