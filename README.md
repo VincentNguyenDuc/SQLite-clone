@@ -7,29 +7,44 @@ Rebuild a simple version of [Sqlite](https://www.sqlite.org/index.html) from scr
   - [General Information](#general-information)
   - [Features](#features)
   - [Usage](#usage)
-
+  - [Acknowledgement](#acknowledgement)
 
 
 ## General Information
-- Provide general information about your project here.
-- What problem does it (intend to) solve?
-- What is the purpose of your project?
-- Why did you undertake it?
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
+- The main objective of this project is to attain a comprehension of the intricate architecture of SQLite, strengthen my proficiency in the C Programming Language, and try to employ Test-Driven Development (TDD) using PyTest.
 
 
 ## Features
-List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
+```bash
+# Insert data into the database file (*.db):
+$ insert {user_id} {user_name} {user_email}
+
+# Retrieve all the available data within the database:
+$ select
+
+# Save and exit the database 
+$ .exit
+
+# A simple visualization of B-Tree, which worked as the underlying data structure
+$ .btree
+```
 
 
 ## Usage
-Makefile: `make main`
+```bash
+# Compile everything => create the file: "db.out"
+foo@bar:~$ make compile 
+
+# Run test (PyTest)
+foo@bar:~$ make test
+
+# Create and connect to a new database / connect to an existing database 
+foo@bar:~$ ./db.out {database_name}.db
+```
 
 
-
+## Acknowledgement
+- This project is based on this [tutorial](https://github.com/cstack/db_tutorial)
 
 
 

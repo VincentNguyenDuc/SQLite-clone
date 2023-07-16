@@ -22,10 +22,13 @@ BACKEND_SRC_DIR=./sqlite-db/backend/src/*.c
 
 #################################### MAIN ##############################################
 
-db:
+compile:
 		gcc -o db.${TARGET_EXTENSION} ${MAIN_DIR} ${INTERFACE_SRC_DIR}  ${BACKEND_SRC_DIR}
+
+test:
+		pytest -v
 
 ##################################### CLEAN ############################################
 clean:	
 		${CLEANUP} *.${TARGET_EXTENSION}
-		${CLEANUP} mydb.db
+		${CLEANUP} test_db.db
