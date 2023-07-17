@@ -11,7 +11,7 @@ Rebuild a simple version of [Sqlite](https://www.sqlite.org/index.html) from scr
 
 
 ## General Information
-- The main objective of this project is to attain a comprehension of the intricate architecture of SQLite, strengthen my proficiency in the C Programming Language, and try to employ Test-Driven Development (TDD) using PyTest.
+- The main objective of this project is to attain a comprehensive understanding of the architecture of SQLite, strengthen proficiency in the C Programming Language, and try to employ Test-Driven Development (TDD) using PyTest.
 
 
 ## Features
