@@ -26,7 +26,7 @@ compile:
 		gcc -o db.${TARGET_EXTENSION} ${MAIN_DIR} ${INTERFACE_SRC_DIR}  ${BACKEND_SRC_DIR}
 
 test:
-		pytest -v
+		pytest -vv
 
 ##################################### CLEAN ############################################
 clean:	
