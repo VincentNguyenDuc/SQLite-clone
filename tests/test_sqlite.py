@@ -43,7 +43,7 @@ class TestSQLite:
         os.system("make compile")
         proc = Popen(self.CONNECT_COMMAND, stdin=PIPE, stdout=PIPE)
         index_list = list(range(1, self.DEFAULT_TEST_SIZE + 1))
-        # shuffle(index_list)
+        shuffle(index_list)
         for i in index_list:
             proc.stdin.write(
                 bytes(f"insert {i} user{i} person{i}@gmail.com\n", 'utf-8'))
